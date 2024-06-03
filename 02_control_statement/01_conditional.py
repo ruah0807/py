@@ -21,23 +21,23 @@ else :
 # 주어진 값을 case 블록의 값과 비교해 일치하는 case 만 실행
 
 print("====== vending marchine ======")
-print(" 사이다 (500) 콜라(600) 환타(700) 밀키스 (1000)")
+print(" milkiss(500) coke(600) fanta(700) milkiss(1000)")
 print("원하시는 음료를 선택해주세요 : ")
 
 drink = input()
 
 price = 0
 match drink:
-    case "사이다":
+    case "sider":
         print("사이다를 선택하셨습니다.")
         price = 500
-    case "콜라":
+    case "coke":
         print("콜라를 선택하셨습니다.")
         price = 600
-    case "환타":
+    case "fanta":
         print("환타를 선택하셨습니다.")
         price = 700
-    case "밀키스":
+    case "milkiss":
         print("밀키스를 선택하셨습니다.")
         price = 1000
     case _:

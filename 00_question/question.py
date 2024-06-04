@@ -50,7 +50,7 @@ def get_high_achievers():
         
 while True:
     display_menu()
-    choice = int(input("선택하세요"))
+    choice = int(input("선택하세요 : "))
     if choice == 1 :
         add_grade()
     elif choice == 2 :

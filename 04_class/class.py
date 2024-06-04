@@ -91,6 +91,9 @@ student3.display_info()
 variable = 'global cariable'
 print('전역 : ', variable)
 
+
+
+
 def outer_function():
     #외부 함수 네임 스페이스
     variable = 'outer variable'

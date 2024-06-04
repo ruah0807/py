@@ -39,7 +39,9 @@ class Account :
             raise ValueError('잔액이 부족하거나 잘못된 출금입니다.')
     
     def display_balance(self):
-        print(f"{self.name}님의 현재 잔액은 {self.balance}원 입니다.")
+        print(f"""------------------------------------------------
+{self.name}님의 현재 잔액은 {self.balance}원 입니다.
+-------------------------------------------------""")
     
     
     
@@ -48,13 +50,17 @@ class Bank(Account) :
     
     def __init__(self, bank_name):
         self.bank_name = bank_name
+        #계좌 목록 초기화
         self.accounts = []
         
     def create_account(self, name, balance, new_account):
         account = Account(name,balance,new_account)
         self.accounts.append(account)
-        print(f"""-------{name}님의 계좌번호는 {new_account}이고,
-              {balance}가 입금 되셨습니다.---------------""")
+        print(f"""-------------------------
+환영합니다 {name}님!
+계좌번호 : {new_account}
+잔액 : {balance}원
+------------------------""")
         
     
     def get_account(self, name):
@@ -67,7 +73,9 @@ class Bank(Account) :
     def display_accounts(self):
         print(f"{self.bank_name}의 모든 고객 계좌 정보")
         for account in self.accounts:
-            print(f"소유주 : {account.name}, 계좌번호 : {account.new_account}, 잔액 :{account.balance}원")
+            print(f"""----------------------------------------------------------------
+소유주 : {account.name}, 계좌번호 : {account.new_account}, 잔액 :{account.balance}원
+----------------------------------------------------------------""")
     
     
 bank = Bank('하나은행')

@@ -17,7 +17,8 @@ app = FastAPI()
 def read_root():
     return{"hello": "world"}
 
-# uvicorn main:app --reload 명령어
+# uvicorn main:app --reload
+
 # main = main.py 파일을 의미
 # app = main.py 에서 FastAPI() 객체를 식별하는 app 객체를 의미
 # --reload = 파일에 변화가 생기면 재시작 하겠다는 옵션

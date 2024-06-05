@@ -66,3 +66,11 @@ async def add(request:Request, task:str=Form(...), db:Session=Depends(get_db)):
 
 
 
+@app.get('/edit/{todo_id}')                   # 선택한 번호를 가져옴
+async def add(request:Request, todo_id: int, db: Session = Depends(get_db)):
+    
+    # 데이터베이스에서 Todo 모델을 가져와, id 가 todo_id와 일치하는 첫 번째 항목을 가져옴
+    todo = db.query(models.Todo).filter(models.Todo.id == todo_id).first()
+    
+    # 템플릿을 랜더링 하여 사용자에게 반환
+    return templetes.TemplateResponse("edit.html", {"request" : request, "todo" : todo})
